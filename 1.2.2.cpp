@@ -7,7 +7,12 @@ private:
     vector<int> v;
     int n;
 public:
+    MyClass(int _n) {
+        set(_n);
+    }
+
     void set(int _n) {
+        cout << "Enter array: ";
         for (int i = 0; i < _n; i++) {
             int x;
             cin >> x;
@@ -30,12 +35,10 @@ public:
 };
 
 int main() {
-    MyClass array{};
     int k;
     cout << "Enter number of elements: ";
     cin >> k;
-    cout << "Enter array: ";
-    array.set(k);
+    MyClass array(k);
     cout << "Array: ";
     array.get(k);
     cout << "Reverse: ";
