@@ -9,7 +9,7 @@ public:
     }
 
     ~MyClass() {
-        cout << "Destructer";
+        cout << "Destructor";
     }
 };
 
