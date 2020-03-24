@@ -25,10 +25,6 @@ public:
 	friend void compare(const MyClass &myClass, const MyClass1 &myClass1);
 };
 
-void compare(const MyClass &myClass, const MyClass1 &myClass1) {
-
-}
-
 void compare(MyClass &myClass, MyClass1 &myClass1) {
 	cout << fmax(myClass.property , fmax(myClass1.property1, myClass1.property2));
 }
