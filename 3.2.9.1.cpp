@@ -84,9 +84,10 @@ int main() {
         }
     }
 
-    cout << name1 << " " << name2 <<":\n";
+    cout << name1 << "   " << name2 << endl;
+    cout << setw(15) << left << name1 << setw(15) << left << name2 << endl;
     while (!myStack1.isEmpty() && !myStack2.isEmpty()) {
-        cout << myStack1.pop() << " " << myStack2.pop() <<endl;
+        cout << setw(15) << right << myStack1.pop() << setw(15) << right << myStack2.pop() << endl;
     }
 
 
