@@ -76,11 +76,11 @@ int main() {
     Stack myStack2(capacity2);
 
     while (cin >> x) {
-        if (!myStack1.isStackOverflow()) {
+        if (!myStack1.isStackOverflow() && !myStack2.isStackOverflow()) {
             myStack1.push_back(x);
-        }
-        if (!myStack2.isStackOverflow()) {
             myStack2.push_back(x);
+        } else {
+            break;
         }
     }
 
