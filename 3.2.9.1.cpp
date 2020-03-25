@@ -67,7 +67,7 @@ int *Stack::modifyArray() {
 
 
 int main() {
-    int capacity1, capacity2; // вместимости стеков
+    int capacity1, capacity2, x; // вместимости стеков
     string name1, name2; // "имена" стеков
 
     cin >> name1 >> capacity1;
@@ -75,17 +75,12 @@ int main() {
     cin >> name2 >> capacity2;
     Stack myStack2(capacity2);
 
-    for (int i = 0; i < fmax(capacity1, capacity2)+1; i++) {
-        int x;
-        cin >> x;
+    while (cin >> x) {
         if (!myStack1.isStackOverflow()) {
             myStack1.push_back(x);
         }
         if (!myStack2.isStackOverflow()) {
             myStack2.push_back(x);
-        }
-        if (myStack1.isStackOverflow() || myStack2.isStackOverflow()) {
-            break;
         }
     }
 
