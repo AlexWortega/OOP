@@ -50,7 +50,7 @@ int Stack::pop() {
 }
 
 bool Stack::isStackOverflow() {
-    return size > capacity;
+    return size == capacity;
 }
 
 bool Stack::isEmpty() {
