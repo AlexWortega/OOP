@@ -69,7 +69,6 @@ int *Stack::modifyArray() {
 int main() {
     int capacity1, capacity2; // вместимости стеков
     string name1, name2; // "имена" стеков
-    vector<int> input; // вектор со значениями, которые нужно добавить в стеки
 
     cin >> name1 >> capacity1;
     Stack myStack1(capacity1);
@@ -79,25 +78,21 @@ int main() {
     for (int i = 0; i < fmax(capacity1, capacity2)+1; i++) {
         int x;
         cin >> x;
-        input.push_back(x);
+        if (!myStack1.isStackOverflow()) {
+            myStack1.push_back(x);
+        }
+        if (!myStack2.isStackOverflow()) {
+            myStack2.push_back(x);
+        }
+        if (myStack1.isStackOverflow() || myStack2.isStackOverflow()) {
+            break;
+        }
     }
 
-    for (int i = 0; i < capacity1; i++) {
-        myStack1.push_back(input[i]);
-    }
-    for (int i = 0; i < capacity2; i++) {
-        myStack2.push_back(input[i]);
+    cout << name1 << " " << name2 <<":\n";
+    while (!myStack1.isEmpty() && !myStack2.isEmpty()) {
+        cout << myStack1.pop() << " " << myStack2.pop() <<endl;
     }
 
-    cout << name1 << ":\n";
-    while (!myStack1.isEmpty()) {
-        cout << myStack1.pop() << endl;
-    }
-    cout << name2 << ":\n";
-    while (!myStack2.isEmpty()) {
-        cout << myStack2.pop() << endl;
-    }
 
 }
-
-
